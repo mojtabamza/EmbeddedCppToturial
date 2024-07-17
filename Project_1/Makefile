@@ -3,7 +3,7 @@ PROJECT_NAME = TASK_MANAGER
 
 # Compiler settings
 CXX = g++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++11 -Wall -Werror -Wextra -O3 -g
 
 # Source files (located in the "src" directory)
 SRCS = $(wildcard src/*.cpp)
