@@ -1,15 +1,30 @@
+# Project name
+PROJECT_NAME = TASK_MANAGER
+
 # Compiler settings
 CXX = g++
 CXXFLAGS = -std=c++11
 
-# Source files
+# Source files (located in the "src" directory)
 SRCS = $(wildcard src/*.cpp)
 
-# Object files
-OBJS = $(SRCS:.cpp=.o)
+# Build directory
+BUILD_DIR := build
+$(shell mkdir -p $(BUILD_DIR))
+
+# Bin directory
+BIN_DIR := bin
+$(shell mkdir -p $(BIN_DIR))
+
+# Object files (saved in the "build" directory)
+OBJS = $(addprefix $(BUILD_DIR)/, $(notdir $(SRCS:.cpp=.o)))
 
 # Target executable
-TARGET = bin/P_1
+TARGET := $(BIN_DIR)/$(PROJECT_NAME)
+
+# Rule to compile each source file
+$(BUILD_DIR)/%.o: src/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Build rule
 $(TARGET): $(OBJS)
@@ -18,3 +33,4 @@ $(TARGET): $(OBJS)
 # Clean rule
 clean:
 	rm -f $(OBJS) $(TARGET)
+
