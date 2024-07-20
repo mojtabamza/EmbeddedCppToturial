@@ -1,6 +1,6 @@
 #include "LinkedList.hpp"
 
-void LinkedList_t::push_back(int val)
+void LinkedList_t::PushBack(int val)
 {
     Node_t* newNode = new Node_t(val);
     if ( head == nullptr ) {
@@ -14,7 +14,7 @@ void LinkedList_t::push_back(int val)
     tmp->next = newNode;
 }
 
-void LinkedList_t::print(void)
+void LinkedList_t::Print(void)
 {
     Node_t* tmp = head;
     while ( tmp != nullptr ) {
@@ -22,4 +22,14 @@ void LinkedList_t::print(void)
         tmp = tmp->next;
     }
     cout << endl;
+}
+
+void LinkedList_t::Delete(int nodeNumber)
+{
+
+}
+
+int LinkedList_t::Back(void)
+{
+    return 0;
 }
