@@ -4,6 +4,6 @@ using std::cout;
 using std::endl;
 
 int main(void) {
-    cout << "Project 3" << endl;
+    cout << "Data Observer Project" << endl;
     return 0;
 }

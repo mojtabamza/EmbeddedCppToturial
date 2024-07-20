@@ -1,5 +1,5 @@
 # Project name
-PROJECT_NAME = Project_3
+PROJECT_NAME = DataObserver
 
 # Compiler settings
 CXX = g++
