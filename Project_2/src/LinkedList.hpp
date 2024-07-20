@@ -17,6 +17,7 @@ class LinkedList_t {
     void PushBack(int val);
     void Print(void);
     void Delete(int nodeNumber);
+    int Back(void);
 
     private:
     Node_t* head;
