@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ObserverPattern.hpp"
 
 using std::cout;
 using std::endl;
