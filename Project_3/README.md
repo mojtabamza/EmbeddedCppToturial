@@ -1,1 +1,1 @@
-# A Data Observer Project
+# An Observer Pattern Project
