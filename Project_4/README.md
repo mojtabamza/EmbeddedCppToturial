@@ -1,0 +1,1 @@
+# A Strategy Pattern Project
