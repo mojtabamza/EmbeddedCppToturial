@@ -44,10 +44,10 @@ class Milk_t : public Decorator_t {
 public:
     Milk_t(Coffee_t* coffeeObj) : Decorator_t(coffeeObj) {}
     string Type() const override {
-        return coffeeObj->Type() + " Milk";
+        return coffeeObj->Type() + " + Milk!";
     }
     string Cost() const override {
-        return coffeeObj->Cost() + " + 10 Euro";
+        return coffeeObj->Cost() + " + 10 Euro!";
     }
 };
 
