@@ -1,5 +1,5 @@
 # Project name
-PROJECT_NAME = Project_6
+PROJECT_NAME = UnitTest_Catch2
 
 # Compiler settings
 CXX = g++
@@ -30,7 +30,16 @@ $(BUILD_DIR)/%.o: src/%.cpp
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
+# Rule to compile the test file
+$(BUILD_DIR)/test.o: test/test.cpp
+	$(CXX) -std=c++14 -I. -c $< -o $@
+
+# Test rule
+test: $(BUILD_DIR)/test.o
+	rm -f $(BIN_DIR)/Test_$(PROJECT_NAME)
+	$(CXX) -std=c++14 -I. test/test.cpp -o $(BIN_DIR)/Test_$(PROJECT_NAME)
+	./$(BIN_DIR)/Test_$(PROJECT_NAME)
+
 # Clean rule
 clean:
-	rm -f $(OBJS) $(TARGET)
-
+	rm -f $(OBJS) $(TARGET) $(BUILD_DIR)/test.o $(BIN_DIR)/Test_$(PROJECT_NAME)
